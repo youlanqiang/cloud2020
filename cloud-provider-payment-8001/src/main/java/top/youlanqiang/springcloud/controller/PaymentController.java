@@ -17,11 +17,11 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping("/create")
-    public CommonResult<Void> create(@RequestBody Payment payment) {
+    public CommonResult<Payment> create(@RequestBody Payment payment) {
         int result = paymentService.create(payment);
         log.info("插入结果:" + result);
         if (result > 0) {
-            return new CommonResult<>(200, "插入数据成功.");
+            return new CommonResult<>(200, "插入数据成功.",payment);
         } else {
             return new CommonResult<>(500, "插入数据失败.");
         }
