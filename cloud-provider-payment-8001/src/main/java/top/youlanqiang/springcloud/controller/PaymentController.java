@@ -1,5 +1,7 @@
 package top.youlanqiang.springcloud.controller;
 
+
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import top.youlanqiang.springcloud.entities.CommonResult;
@@ -9,8 +11,8 @@ import top.youlanqiang.springcloud.service.PaymentService;
 import javax.annotation.Resource;
 
 @RestController
-@Slf4j
 @RequestMapping("/payment")
+@Slf4j
 public class PaymentController {
 
     @Resource
