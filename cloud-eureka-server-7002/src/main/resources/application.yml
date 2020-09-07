@@ -1,8 +1,8 @@
 server:
-  port: 7001
+  port: 7002
 eureka:
   instance:
-    hostname: eureka1
+    hostname: eureka2
   client:
     #false表示不向注册中心注册自己
     register-with-eureka: false
@@ -10,4 +10,4 @@ eureka:
     fetch-registry: false
     service-url:
       #设置与eureka server交互的地址查询服务和注册服务都需要依赖这个地址.
-      defaultZone: http://eureka2:7002/eureka/
+      defaultZone: http://eureka1:7001/eureka/
