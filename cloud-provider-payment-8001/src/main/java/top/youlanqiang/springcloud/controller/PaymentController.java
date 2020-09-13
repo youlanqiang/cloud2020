@@ -10,6 +10,7 @@ import top.youlanqiang.springcloud.entities.Payment;
 import top.youlanqiang.springcloud.service.PaymentService;
 
 import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/payment")
@@ -43,4 +44,15 @@ public class PaymentController {
             return new CommonResult<>(500, "插入数据失败.");
         }
     }
+
+    @GetMapping("/feign/timeout")
+    public String paymentTimeout(){
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
+    }
+
 }

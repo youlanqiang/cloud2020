@@ -5,13 +5,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
-import top.youlanqiang.myrule.MySelfRule;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+
 
 //排除数据源加载
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableEurekaClient
-@RibbonClient(name = "CLOUD-PAYMENT-SERVICE", configuration = MySelfRule.class)
+@EnableFeignClients
 public class Application {
 
     public static void main(String[] args) {
