@@ -1,0 +1,19 @@
+server:
+  port: 9001
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      #defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka1:7001/eureka,http://eureka2:7002/eureka
+spring:
+  application:
+    name: cloud-hystrix-dashboard-service
+logging:
+  level:
+    # feign日志以什么级别监控哪个接口
+    top.youlanqiang.springcloud.service.PaymentFeignService: debug
+feign:
+  hystrix:
+    enabled: true #开启feign对 hystrix的支持
