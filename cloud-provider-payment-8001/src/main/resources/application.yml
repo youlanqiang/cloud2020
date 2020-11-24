@@ -1,6 +1,12 @@
 server:
   port: 8001
 spring:
+  zipkin:
+    base-url: http://192.168.81.131:9411/
+  sleuth:
+    sampler:
+      # 采样率介于0到1之间，1则表示全部采集
+      probability: 1
   application:
     name: cloud-payment-service
   datasource:
