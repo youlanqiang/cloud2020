@@ -13,11 +13,13 @@
         <module name="cloud-api-commons" />
         <module name="cloud-gateway-9527" />
         <module name="cloud-consumer-order-80" />
+        <module name="cloudalibaba-config-nacos-client-3377" />
         <module name="cloud-consumer-feign-hystrix-order-80" />
         <module name="cloud-provider-payment-8002" />
         <module name="cloud-provider-payment-8001" />
         <module name="cloud-provider-payment-8004" />
         <module name="cloud-consumer-feign-order-80" />
+        <module name="cloudalibaba-consumer-nacos-order-83" />
         <module name="cloud-provider-payment-9001" />
         <module name="cloud-consumercl-order-80" />
         <module name="cloud-consumerzk-order-80" />
