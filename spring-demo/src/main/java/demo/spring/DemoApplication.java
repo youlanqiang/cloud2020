@@ -1,5 +1,7 @@
 package demo.spring;
 
+import demo.spring.bean.User;
+import demo.spring.config.MyConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -23,6 +25,15 @@ public class DemoApplication {
         for (String name : names) {
             System.out.println(name);
         }
+
+        //3. 从容器中获取组件
+        User user = run.getBean("user", User.class);
+
+        // 如果 @Configuration(proxyBeanMethods = true)代理对象调用方法
+        // SpringBoot总会检查这个组件是否存在容器
+        // 保持组件单实例
+        MyConfig config = run.getBean(MyConfig.class);
+        System.out.println(config.user() == config.user());
     }
 
 }
