@@ -34,6 +34,8 @@ public class DemoApplication {
         // 保持组件单实例
         MyConfig config = run.getBean(MyConfig.class);
         System.out.println(config.user() == config.user());
+        // 是否存在ID对应的Bean
+        run.containsBean("user1");
     }
 
 }
