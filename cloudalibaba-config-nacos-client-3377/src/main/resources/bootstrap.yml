@@ -6,10 +6,12 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.81.131:8848
+        server-addr: localhost:8848
       config:
-        server-addr: 192.168.81.131:8848 #指定nacos作为配置中心
-        file-extension: yaml  #指定使用yaml格式的配置文件
-        namespace: 1072352e-97e2-4af8-9a2f-44f420fd3ccf #namespace为空间名id
-        group: DEV
+        server-addr: localhost:8848 #指定nacos作为配置中心
+        file-extension: yml  #指定使用yaml格式的配置文件
+        namespace: public #namespace为空间名id
+  profiles:
+    active: prod
+
 # 默认文件格式 ${applicationName}-${active}.${extension}
